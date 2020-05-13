@@ -1,0 +1,30 @@
+spring.datasource:
+  driverClassName: org.h2.Driver
+  username: sa
+  password:
+
+spring.jpa:
+  database-platform: org.hibernate.dialect.H2Dialect
+  #hibernate.ddl-auto: none
+  #generate-ddl: false
+  #properties.hibernate.hbm2ddl.auto: none
+
+eureka:
+  client:
+    fetchRegistry: true
+    registerWithEureka: true
+    serviceUrl:
+      defaultZone: http://localhost:8701/eureka
+
+security:
+  oauth2:
+    client:
+      clientId: client
+      clientSecret: secret
+      scope: openid
+      accessTokenUri: http://localhost:8500/uaa/oauth/token
+      userAuthorizationUri: http://localhost:8500/uaa/oauth/authorize
+    resource:
+      jwt:
+        key-uri: http://localhost:8500/uaa/oauth/token_key
+
