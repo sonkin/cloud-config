@@ -5,4 +5,4 @@ management:
   security:
     enabled: false
 
-test: hello123456
+test: hello1234567
